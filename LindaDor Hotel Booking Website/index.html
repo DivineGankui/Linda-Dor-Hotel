@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lindador Hotel</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-green-50 text-gray-800 min-h-screen">
+
+ <nav class="bg-green-900 text-white px-6 py-4">
+  <div class="flex justify-between items-center">
+    <h1 class="text-xl font-bold">Lindador Hotel</h1>
+
+    <!-- Mobile menu button -->
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+
+    <!-- Desktop menu -->
+    <div class="hidden md:flex gap-6">
+      <button onclick="showPage('home', this)" class="nav-link">Home</button>
+      <button onclick="showPage('rooms', this)" class="nav-link">Rooms</button>
+      <button onclick="showPage('about', this)" class="nav-link">About</button>
+      <button onclick="showPage('contact', this)" class="nav-link">Contact</button>
+    </div>
+  </div>
+
+  
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden flex-col gap-4 mt-4 md:hidden">
+    <button onclick="showPage('home', this)" class="nav-link">Home</button>
+    <button onclick="showPage('rooms', this)" class="nav-link">Rooms</button>
+    <button onclick="showPage('about', this)" class="nav-link">About</button>
+    <button onclick="showPage('contact', this)" class="nav-link">Contact</button>
+  </div>
+</nav>
+
+
+ <!-- Home -->
+<section id="home" class="page h-screen flex items-center justify-center hero">
+  <div class="overlay-box">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4">Lindador Hotel</h2>
+    <p class="text-base md:text-xl mb-6">Experience comfort, elegance, and unforgettable stays</p>
+    <a href="bookings.html" class="book-btn">Book Your Stay</a>
+  </div>
+</section>
+
+
+  <!-- Gallery -->
+  <section class="max-w-6xl mx-auto py-12 md:py-16 px-4 md:px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Hotel Gallery</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" class="gallery-img" alt="Hotel Lobby">
+      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" class="gallery-img" alt="Hotel Room">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" class="gallery-img" alt="Hotel Pool">
+    </div>
+  </section>
+
+  <!-- Rooms -->
+  <section id="rooms" class="page hidden max-w-6xl mx-auto py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Rooms</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Standard Room">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Standard Room</h3>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a" alt="Suite">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Suite</h3>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427" alt="Deluxe Room">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Deluxe Room</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="page hidden max-w-4xl mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">About Lindador Hotel</h2>
+    <p>
+      Lindador Hotel blends luxury, comfort, and world-class service.
+      Experience unforgettable comfort and elegance in a serene environment
+      perfect for leisure and business travelers.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="page hidden max-w-4xl mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <p>Email: info@lindadorhotel.com</p>
+    <p>Phone: +233 59 504 4309</p>
+  </section>
+
+<!-- WhatsApp Button -->
+<a 
+  href="https://wa.me/233249548095?text=Hello%20Manager%2C%20I%20would%20like%20to%20make%20a%20booking.%20Please%20can%20you%20provide%20me%20with%20the%20available%20options%20and%20prices%3F%20Thank%20you."
+  target="_blank"
+  class="whatsapp-btn"
+>
+  <img src="/images/whatsapp%20logo.png" alt="WhatsApp" class="wa-icon">
+  WhatsApp
+</a>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-green-900 text-green-100 py-8 text-center">
+    <p>© 2026 Lindador Hotel. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

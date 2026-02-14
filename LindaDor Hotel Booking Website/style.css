@@ -1,0 +1,152 @@
+/* Hero section with faded background image */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Navbar links */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  color: #f87171; /* soft red */
+}
+
+/* Active (clicked) state */
+.nav-link.active {
+  color: #f87171;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #f87171;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+
+/* Background image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("/images/ee.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Content stays sharp */
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Overlay box */
+.overlay-box {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+/* Book button */
+.book-btn {
+  background-color: #dc2626;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+.book-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Gallery images */
+.gallery-img {
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  height: 16rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Room cards */
+.room-card {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-card img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #16a34a;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-weight: 600;
+}
+
+.wa-icon {
+  width: 22px;
+  height: 22px;
+}
+
+
+.whatsapp-btn:hover {
+  background: #15803d;
+}
+
+/* Page transition */
+.page {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateY(0);
+}
