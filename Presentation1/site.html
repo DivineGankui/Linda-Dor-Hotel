@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="login-error" style="color: red;"></p>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+    </div>
+
+    <div class="container hidden" id="signup-container">
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-username" placeholder="Username">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button onclick="signup()">Sign Up</button>
+        <p id="signup-error" style="color: red;"></p>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <script>
+        function getUsers() {
+            return JSON.parse(localStorage.getItem("users")) || {};
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        function login() {
+            var username = document.getElementById("login-username").value;
+            var password = document.getElementById("login-password").value;
+            var users = getUsers();
+            
+            if (users[username] && users[username] === password) {
+                window.location.href = "https://example.com"; // Change this to your desired URL
+            } else {
+                document.getElementById("login-error").innerText = "Invalid credentials!";
+            }
+        }
+
+        function signup() {
+            var username = document.getElementById("signup-username").value;
+            var password = document.getElementById("signup-password").value;
+            var users = getUsers();
+            
+            if (username in users) {
+                document.getElementById("signup-error").innerText = "Username already exists!";
+            } else {
+                users[username] = password;
+                saveUsers(users);
+                alert("Signup successful! You can now log in.");
+                showLogin();
+            }
+        }
+
+        function showSignup() {
+            document.getElementById("login-container").classList.add("hidden");
+            document.getElementById("signup-container").classList.remove("hidden");
+        }
+
+        function showLogin() {
+            document.getElementById("signup-container").classList.add("hidden");
+            document.getElementById("login-container").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
