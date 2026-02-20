@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+body {
+  margin: 0;
+  background: #ecfdf5;
+}
+
+.booking-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #065f46;
+}
+
+.field {
+  margin-bottom: 1.2rem;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.book-btn {
+  width: 100%;
+  background: #dc2626;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #631111;
+  transition-duration: 0.4s;
+}
+
+.message {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.back-link {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #065f46;
+  font-weight: bold;
+  text-decoration: none;
+}

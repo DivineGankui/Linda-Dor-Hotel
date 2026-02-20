@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0fdf4;
+  color: #1f2937;
+}
+
+/* NAVBAR */
+h1{
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+  padding-bottom: 12px;
+}
+.navbar {
+  position: fixed;
+  background: #14532d;
+  color: white;
+  padding: 1rem 1.5rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f87171;
+}
+
+
+/* MOBILE */
+.mobile {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.mobile.show {
+  display: flex;
+}
+ 
+.desktop {
+  display: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("./images/ee.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+}
+
+.page .hero{
+  padding: 20rem;
+}
+
+.overlay-box {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(0,0,0,0.5);
+  padding: 3.5rem 4rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-top: 10%;
+  margin-left: 25%;
+  width: 50%;
+}
+
+p{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Book button */
+.book-btn {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #dc2626;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #910a0a;
+  transition-duration: 0.5s;
+}
+
+.book-btn:active{
+  background-color: #b90000;
+}
+
+/* PAGES */
+.page{
+  display: none;
+  padding: 4rem 1.5rem;
+  animation: fade 0.4s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.center {
+  text-align: center;
+}
+
+/* GALLERY */
+h2{
+  text-align: center;
+  padding: 1.5rem;
+}
+
+
+.gallery-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+/* ROOMS */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.room-card {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+
+/* WHATSAPP */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #16a34a;
+  padding: 0.5rem 0.5rem;
+  border-radius: 700px;
+  display: flex;
+}
+
+.wa-icon {
+  width: 30px;
+}
+
+/* FOOTER */
+.footer {
+  background: #14532d;
+  color: #dcfce7;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .desktop {
+    display: flex;
+  }
+  .menu-btn,
+  .mobile {
+    display: none;
+  }
+}
