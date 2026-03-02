@@ -1,0 +1,48 @@
+/* Body styling */
+body {
+  background-color: #ecfdf5; /* Tailwind bg-green-50 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card styling */
+.thank-card {
+  background-color: #ffffff; /* white background */
+  padding: 2rem; /* p-8 */
+  border-radius: 1rem; /* rounded-xl */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  text-align: center;
+}
+
+/* Heading styling */
+.thank-card h1 {
+  font-size: 2rem; /* text-3xl */
+  font-weight: bold; /* font-bold */
+  color: #047857; /* Tailwind text-green-700 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Paragraph styling */
+.thank-card p {
+  font-size: 1rem;
+  color: #374151; /* dark gray */
+  margin-bottom: 1rem;
+}
+
+/* Link styling */
+.thank-card a {
+  display: block; /* block */
+  margin-top: 1rem; /* mt-4 */
+  font-weight: bold; /* font-bold */
+  color: #059669; /* Tailwind text-green-600 */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.thank-card a:hover {
+  color: #047857; /* darker green on hover */
+}

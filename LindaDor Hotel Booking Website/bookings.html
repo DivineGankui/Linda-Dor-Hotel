@@ -2,59 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Your Stay | Lindador Hotel</title>
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="booking.css">
 </head>
 
-<body class="bg-green-50 min-h-screen flex items-center justify-center">
+<body>
 
-  <div class="booking-card">
-    <h1 class="title">Book Your Stay</h1>
+  <div class="booking-wrapper">
+    <div class="booking-card">
+      <h1 class="title">Book Your Stay</h1>
 
-    <!-- FORM that POSTS to Google Form -->
-    <form id="bookingForm"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSeU145GvfXcb750XMkHlRGBSOuM7KVN44nKcRnbnYoSoulNwA/formResponse"
-      method="POST"
-      target="hidden_iframe">
+      <form id="bookingForm"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSeU145GvfXcb750XMkHlRGBSOuM7KVN44nKcRnbnYoSoulNwA/formResponse"
+        method="POST"
+        target="hidden_iframe">
 
-      <div class="field">
-        <label>Full Name</label>
-        <input type="text"name="entry.2092238618"placeholder="Your full name"required>
-      </div>
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your full name" name="entry.2092238618" required>
+        </div>
 
-      <div class="field">
-        <label>Email</label>
-        <input type="email"name="entry.1556369182"placeholder="your@email.com" required>
-      </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your full name" name="entry.1556369182" required>
+        </div>
 
-      <div class="field">
-        <label>Contact Number</label>
-        <input type="tel"name="entry.479301265" placeholder="059XXXXXXXX" required>
-      </div>
+        <div class="field">
+          <label>Contact Number</label>
+          <input type="tel" placeholder="059XXXXXXX" name="entry.479301265" required>
+        </div>
 
-      <div class="field">
-        <label>Check-in Date</label>
-        <input type="date" id="checkin" name="entry.1753222212" required>
-      </div>
+        <div class="field">
+          <label>Check-in Date</label>
+          <input type="date" id="checkin" name="entry.1753222212" required>
+        </div>
 
-      <div class="field">
-        <label>Check-out Date</label>
-        <input type="date" id="checkout" name="entry.588393791" required>
-      </div>
+        <div class="field">
+          <label>Check-out Date</label>
+          <input type="date" id="checkout" name="entry.588393791" required>
+        </div>
 
-      <button type="submit" class="book-btn">Confirm Booking</button>
-    </form>
+        <button type="submit" class="book-btn">Confirm Booking</button>
+      </form>
 
-    <div id="bookingInfo" class="message"></div>
+      <div id="bookingInfo" class="message"></div>
 
-    <a href="index.html" class="back-link">← Back to Home</a>
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
   </div>
 
-  <!-- Hidden iframe used to submit without redirecting instantly -->
   <iframe name="hidden_iframe" style="display:none;"></iframe>
 
   <script src="booking.js"></script>
