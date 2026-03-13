@@ -13,9 +13,11 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 checkout.min = tomorrow.toISOString().split("T")[0];
 checkout.value = checkout.min;
 
-// Submit event
+
+// Form submission
 bookingForm.addEventListener("submit", function (e) {
-  // Validate check-in/out
+
+  // Validate dates
   if (checkout.value <= checkin.value) {
     e.preventDefault();
     bookingInfo.textContent = "❌ Check-out must be after check-in.";
@@ -23,13 +25,13 @@ bookingForm.addEventListener("submit", function (e) {
     return;
   }
 
-  // Show submission message
-  bookingInfo.textContent = "✔ Booking submitted!";
+  // Show message
+  bookingInfo.textContent = "✔ Booking submitted successfully!";
   bookingInfo.style.color = "green";
 
-  // Allow Google Form to submit
-  // Then redirect after 1 second
-  setTimeout(() => {
-    window.location.href = "thank you.html"; // Ensure this file exists
-  }, 1000);
+  // Redirect after submission
+  setTimeout(function () {
+    window.location.href = "thank you.html";
+  }, 2000);
+
 });

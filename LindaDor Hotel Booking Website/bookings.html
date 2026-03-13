@@ -1,58 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Book Your Stay | Lindador Hotel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="booking.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Your Stay | Lindador Hotel</title>
+
+<link rel="stylesheet" href="booking.css">
+
 </head>
 
 <body>
 
-  <div class="booking-wrapper">
-    <div class="booking-card">
-      <h1 class="title">Book Your Stay</h1>
+<div class="booking-wrapper">
 
-      <form id="bookingForm"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSeU145GvfXcb750XMkHlRGBSOuM7KVN44nKcRnbnYoSoulNwA/formResponse"
-        method="POST" target="hidden_iframe">
+<div class="booking-card">
 
-        <div class="field">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter your full name" name="entry.2092238618" required>
-        </div>
+<h1 class="title">Book Your Stay</h1>
 
-        <div class="field">
-          <label>Email</label>
-          <input type="email" placeholder="Enter your full name" name="entry.1556369182" required>
-        </div>
+<form id="bookingForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLSeU145GvfXcb750XMkHlRGBSOuM7KVN44nKcRnbnYoSoulNwA/formResponse"
+method="POST"
+target="hidden_iframe">
 
-        <div class="field">
-          <label>Contact Number</label>
-          <input type="tel" placeholder="059XXXXXXX" name="entry.479301265" required>
-        </div>
+<!-- Full Name -->
+<div class="field">
+<label for="fullname">Full Name</label>
+<input 
+type="text"
+id="fullname"
+name="entry.2092238618"
+placeholder="Enter your full name"
+autocomplete="name"
+required>
+</div>
 
-        <div class="field">
-          <label>Check-in Date</label>
-          <input type="date" id="checkin" name="entry.1753222212" required>
-        </div>
+<!-- Email -->
+<div class="field">
+<label for="email">Email Address</label>
+<input
+type="email"
+id="email"
+name="entry.1556369182"
+placeholder="Enter your email"
+autocomplete="email"
+required>
+</div>
 
-        <div class="field">
-          <label>Check-out Date</label>
-          <input type="date" id="checkout" name="entry.588393791" required>
-        </div>
+<!-- Contact Number -->
+<div class="field">
+<label for="phone">Contact Number</label>
+<input
+type="tel"
+id="phone"
+name="entry.479301265"
+placeholder="059XXXXXXX"
+autocomplete="tel"
+required>
+</div>
 
-        <button type="submit" class="book-btn">Confirm Booking</button>
-      </form>
+<!-- Check-in -->
+<div class="field">
+<label for="checkin">Check-in Date</label>
+<input
+type="date"
+id="checkin"
+name="entry.1753222212"
+required>
+</div>
 
-      <div id="bookingInfo" class="message"></div>
+<!-- Check-out -->
+<div class="field">
+<label for="checkout">Check-out Date</label>
+<input
+type="date"
+id="checkout"
+name="entry.588393791"
+required>
+</div>
 
-      <a href="index.html" class="back-link">← Back to Home</a>
-    </div>
-  </div>
+<button type="submit" class="book-btn">
+Confirm Booking
+</button>
 
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
+</form>
 
-  <script src="booking.js"></script>
+<div id="bookingInfo" class="message"></div>
+
+<a href="index.html" class="back-link">
+← Back to Home
+</a>
+
+</div>
+</div>
+
+<!-- Hidden iframe -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<script src="booking.js"></script>
+
+<!-- Redirect when submission completes -->
+<script>
+
+document.getElementById("hidden_iframe").addEventListener("load", function(){
+
+if (document.getElementById("bookingForm").dataset.submitted) {
+window.location.href = "thank you.html";
+}
+
+});
+
+document.getElementById("bookingForm").addEventListener("submit", function(){
+this.dataset.submitted = "true";
+});
+
+</script>
+
 </body>
 </html>
